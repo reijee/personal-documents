@@ -246,3 +246,12 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 ## 个人总结
 
 TPH实体映射模式把所有的属性都放在一张表中，它在查询性能以及简单化上面有很大的优势。但是它的问题也比较明显，首先这种设计方式不符合数据的第三范式，另外因为TPH中很多子类属性对应的列是可为空的，就为数据验证增加了复杂性，也浪费了很多存储空间。
+
+
+## 索引目录
+
+- [Code First的实体继承模式01-概述](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F01-%E6%A6%82%E8%BF%B0.md)
+- [Code First的实体继承模式02-TPH模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F02-TPH%E6%A8%A1%E5%BC%8F.md)
+- [Code First的实体继承模式03-TPT模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F03-TPT%E6%A8%A1%E5%BC%8F.md)
+- [Code First的实体继承模式04-TPC模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F04-TPC%E6%A8%A1%E5%BC%8F.md)
+

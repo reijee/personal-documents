@@ -184,3 +184,13 @@ SELECT TOP(1) [t].[PictureId], [t].[Description], [t].[Height], [t].[Name], [t].
 FROM [tpt_picthure] AS [t]
 INNER JOIN [tpt_landscape_picthure] AS [t0] ON [t].[PictureId] = [t0].[PictureId]
 ~~~
+
+
+
+## 索引目录
+
+- [Code First的实体继承模式01-概述](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F01-%E6%A6%82%E8%BF%B0.md)
+- [Code First的实体继承模式02-TPH模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F02-TPH%E6%A8%A1%E5%BC%8F.md)
+- [Code First的实体继承模式03-TPT模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F03-TPT%E6%A8%A1%E5%BC%8F.md)
+- [Code First的实体继承模式04-TPC模式](./Code%20First%E7%9A%84%E5%AE%9E%E4%BD%93%E7%BB%A7%E6%89%BF%E6%A8%A1%E5%BC%8F04-TPC%E6%A8%A1%E5%BC%8F.md)
+
