@@ -52,6 +52,12 @@ public class DbContextForTPH : DbContext
             b.Property(t => t.Width).HasColumnType("decimal(18,2)"); 
             // 为Height指定数据类型为decimal(18,2)
             b.Property(t => t.Height).HasColumnType("decimal(18,2)"); 
+
+            /*
+            * 强制指定Tph模式（efcore7新增）
+            * Tph为ef默认模式，可以省去此设置
+            */
+            b.UseTphMappingStrategy();
         });
 
         // 可以配置字段属性，但不可以调用 ToTable 方法
@@ -173,6 +179,12 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         b.Property(t => t.Width).HasColumnType("decimal(18,2)");
         b.Property(t => t.Height).HasColumnType("decimal(18,2)");
 
+        /*
+        * 强制指定Tph模式（efcore7新增）
+        * Tph为ef默认模式，可以省去此设置
+        */
+        b.UseTphMappingStrategy();
+
         // 配置鉴别器列
         b.HasDiscriminator<int>("PicthureType") // 指定鉴别器列的名称及类型
             .HasValue<LandscapePicture>(1) // 指定实体LandscapePicture的值为1
@@ -230,6 +242,12 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         b.ToTable("tph_picthure");
         b.Property(t => t.Width).HasColumnType("decimal(18,2)");
         b.Property(t => t.Height).HasColumnType("decimal(18,2)");
+
+        /*
+        * 强制指定Tph模式（efcore7新增）
+        * Tph为ef默认模式，可以省去此设置
+        */
+        b.UseTphMappingStrategy();
 
         // 配置鉴别器列
         b.HasDiscriminator(t=>t.PicthureType) // 使用 Picture 类的 PicthureType 属性作为鉴别器列
