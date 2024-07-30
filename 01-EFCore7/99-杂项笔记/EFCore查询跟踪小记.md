@@ -96,6 +96,12 @@ EFCore是通过 DBContext.ChangeTracker 管理跟踪查询的。要查看已跟�
 - 调用 **ChangeTracker.DebugView** 属性输出或打印已跟踪的实体信息
 - 调用 **ChangeTracker.Entries()** 方法遍历已跟踪的实体信息
 
+~~~
+注意：
+正常来说在调用 SaveChanges 时，会进行更改检测，以确保在将更新发送到数据库之前检测到所有更改的值。但是也可以调用context.ChangeTracker.DetectChanges()方法强制执行更改检测。
+所以在调用以上两个属性之前，需要调用context.ChangeTracker.DetectChanges()方法强制执行更改检测。
+~~~
+
 示例代码如下：
 
 ~~~csharp
@@ -104,8 +110,10 @@ using(TrackingDbContext context = new TrackingDbContext())
     var product = context.Products.Include(t=>t.Properties).First();
     product.Description = "..." + DateTime.Now.ToString();
 
-    Console.WriteLine(">> ChangeTracker.DebugView");
+    // 强制执行更改检查
     context.ChangeTracker.DetectChanges();
+
+    Console.WriteLine(">> ChangeTracker.DebugView");
     Console.WriteLine(context.ChangeTracker.DebugView.LongView);
 
     Console.WriteLine(">> ChangeTracker.Entries()");
